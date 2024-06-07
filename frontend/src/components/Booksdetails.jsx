@@ -40,7 +40,7 @@ export default function Bookdetails(props) {
                         <tr>
                             <th scope="row" className="fs-6 fw-bold m-1">Tags</th>
                             <td className="">
-                            {BookCategories.map((category) => (
+                            {BookCategories && BookCategories.map((category) => (
                                 <p className='bg-light d-inline text-primary m-1 rounded p-1 fs-6'>{category}</p>
                             ))}
                             </td>
