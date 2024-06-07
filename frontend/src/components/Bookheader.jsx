@@ -14,6 +14,15 @@ export default function Bookheader(props) {
 
     const [status, setStatus] = useState(false);
     const [redirect, setRedirect] = useState(false);
+    const [notify,setNotify] = useState(false);
+
+    // useEffect(()=>{
+    //     if(Stock == 0){
+    //         setNotify(true);
+    //     }
+    // })
+
+
 
     async function AddToCart() {
         if (!_id) return;
@@ -59,7 +68,22 @@ export default function Bookheader(props) {
         fetchCartStatus();
     }, [status]);
 
-    
+    async function AddToNotify(){
+        if (!_id) return;
+        try{
+
+            const response = await fetch(`http://localhost:4000/books/book/notify/${_id}`,{
+                credentials: 'include',
+                method: 'POST'
+            })
+            if (response.status == 200){
+                setNotify(true)
+            }
+        }catch(e){
+            console.log(e)
+            alert("Error in Notifying");
+        }
+    }
 
     if(redirect){
         return <Navigate to={'/cartItems'} />
@@ -112,6 +136,13 @@ export default function Bookheader(props) {
                             <div className="col-md-auto">
                                 <button onClick={AddToCart} className="btn btn-primary">
                                     {(status == false)?"Add to Cart":"Go to Cart"}
+                                </button>
+                            </div>
+                        )}
+                        {Stock == 0 && (
+                            <div className="col-md-auto">
+                                <button onClick={AddToNotify} className="btn btn-danger" >
+                                    {notify == false ? "Notify Me" : "will be notified"}
                                 </button>
                             </div>
                         )}
