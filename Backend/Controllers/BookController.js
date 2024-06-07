@@ -1,5 +1,5 @@
 const Book = require("../models/book.js");
-
+const BookNotification = require("../models/booknotification.js");
 
 const AddBook = async (request,response) => {
     try{
@@ -47,4 +47,14 @@ const GetBook = async(request,response) => {
     }
 };
 
-module.exports = {AddBook,GetBooks,GetBook}
+const Notify = async(request,response) => {
+    try{
+        const {id} = request.params;
+        const notifiedbook = await BookNotification.create({bookId:id,userId:request.user.id});
+        return response.status(200).json({message:"success",book:notifiedbook});
+    }catch(error){
+        console.log(error)
+        return response.status(500).json({message:"error"})
+    }
+};
+module.exports = {AddBook,GetBooks,GetBook,Notify}
