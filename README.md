@@ -86,7 +86,8 @@ The backend will be running on http://localhost:5000.
 
 ---
 ### Database Schema Explanation
-![Database Schema]([https://github.com/Hanveshith/Online-Book-Sales-Website/blob/main/Db.png])
+![Database Schema]([https://github.com/Hanveshith/Online-Book-Sales-Website/blob/main/Db.png?raw=true])
+
 
 ### Entities and Relationships
 1. User
