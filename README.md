@@ -102,34 +102,34 @@ The backend will be running on http://localhost:5000.
    - Password: Encrypted password
    - Role: User role (e.g., admin, customer)
 2. Books
-- Id (PK): Primary Key
-- BookTitle: Title of the book
-- BookDescription: Description of the book
-- BookAuthor: Author of the book
-- BookPublisher: Publisher of the book
-- BookCategories: Categories of the book
-- BookPrice: Price of the book
-- BookYear: Year of publication
-- BookLanguage: Language of the book
-- BookOfferPrice: Any special offers or discounts
-- BookRating: Rating of the book
-- Stock: Available stock of the book
+      - Id (PK): Primary Key
+      - BookTitle: Title of the book
+      - BookDescription: Description of the book
+      - BookAuthor: Author of the book
+      - BookPublisher: Publisher of the book
+      - BookCategories: Categories of the book
+      - BookPrice: Price of the book
+      - BookYear: Year of publication
+      - BookLanguage: Language of the book
+      - BookOfferPrice: Any special offers or discounts
+      - BookRating: Rating of the book
+      - Stock: Available stock of the book
 3. Orders
-- Id (PK): Primary Key
-- id(User(fk)): Foreign Key linking to User
-- id(Book(fk)): Foreign Key linking to Books
-- Quantity: Number of books purchased
-- PaymentStatus: Status of the payment (e.g., pending, completed)
+   - Id (PK): Primary Key
+   - id(User(fk)): Foreign Key linking to User
+   - id(Book(fk)): Foreign Key linking to Books
+   - Quantity: Number of books purchased
+   - PaymentStatus: Status of the payment (e.g., pending, completed)
 4. Cart
-- Id (PK): Primary Key
-- id(User(fk)): Foreign Key linking to User
-- id(Book(fk)): Foreign Key linking to Books
-- Quantity: Quantity of books in the cart
+   - Id (PK): Primary Key
+   - id(User(fk)): Foreign Key linking to User
+   - id(Book(fk)): Foreign Key linking to Books
+   - Quantity: Quantity of books in the cart
 5. BookNotification
-- id (PK): Primary Key
-- id(User(fk)): Foreign Key linking to User
-- id(Book(fk)): Foreign Key linking to Books
-- 
+   - id (PK): Primary Key
+   - id(User(fk)): Foreign Key linking to User
+   - id(Book(fk)): Foreign Key linking to Books
+
 ## Explanation of Relationships
 - User can place multiple Orders and have multiple Cart items.
 - Each Order and Cart entry refers to a Book, ensuring that the relationship between books and transactions is maintained.
