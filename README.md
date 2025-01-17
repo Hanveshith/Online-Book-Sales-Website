@@ -16,7 +16,7 @@ Welcome to the Online Book Sales Website! This platform allows users to browse, 
 5. [Running the Application](#running-the-application)
    - [Frontend](#frontend)
    - [Backend](#backend)
-
+6. [Database Schema Explanation](#Database-Schema-Explanation)
 
 ---
 
@@ -85,22 +85,22 @@ npm start
 The backend will be running on http://localhost:5000.
 
 ---
-![Database Schema](images/Db.png)
 ### Database Schema Explanation
+![Database Schema](images/Db.png)
 
 ### Entities and Relationships
 1. User
-- Id (PK): Primary Key
-- FirstName: User's first name
-- LastName: User's last name
-- Email: User's email address
-- Mobile: User's mobile number
-- State: User's state
-- City: User's city
-- Address: User's full address
-- CityPin: City pin code
-- Password: Encrypted password
-- Role: User role (e.g., admin, customer)
+   - Id (PK): Primary Key
+   - FirstName: User's first name
+   - LastName: User's last name
+   - Email: User's email address
+   - Mobile: User's mobile number
+   - State: User's state
+   - City: User's city
+   - Address: User's full address
+   - CityPin: City pin code
+   - Password: Encrypted password
+   - Role: User role (e.g., admin, customer)
 2. Books
 - Id (PK): Primary Key
 - BookTitle: Title of the book
@@ -132,7 +132,7 @@ The backend will be running on http://localhost:5000.
 - 
 ## Explanation of Relationships
 - User can place multiple Orders and have multiple Cart items.
-Each Order and Cart entry refers to a Book, ensuring that the relationship between books and transactions is maintained.
+- Each Order and Cart entry refers to a Book, ensuring that the relationship between books and transactions is maintained.
 BookNotification acts as a relationship between users and books, likely to track notifications or alerts about book updates or promotions.
 
 
